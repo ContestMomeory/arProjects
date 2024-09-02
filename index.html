@@ -9,11 +9,10 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
-        <a-marker preset="hiro">
-            <a-nft type="nft" url="nfts/rabbit/rabbit" smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"></a-nft>
+        <a-nft type="nft" url="nfts/rabbit/rabbit" smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5">
             <a-entity id="rabbit" gltf-model="rabbit.glb" scale="0.2 0.2 0.2" position="0 0 -5" 
             animation="property: position; to: 0 0 -10; dur: 2000; dir: alternate; loop: true"></a-entity>
-        </a-marker>
+        </a-nft>
         <a-entity camera></a-entity>
     </a-scene>
     <script>
