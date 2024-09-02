@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 引入A-Frame框架 -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!-- 引入AR.js -->
+    <script src="https://rawcdn.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <a-marker preset="hiro">
+            <a-entity id="rabbit" gltf-model="3dModels/cube.glb" scale="10 10 10" position="0 0 -5" 
+            animation="property: position; to: 0 0 -10; dur: 2000; dir: alternate; loop: true"></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+    <script>
+        document.querySelector('#rabbit').addEventListener('model-loaded', function () {
+          console.log('Model loaded successfully');
+        });
+      
+        document.querySelector('#rabbit').addEventListener('error', function (evt) {
+          console.error('Model loading error:', evt.detail);
+        });
+    </script>
+</body>
+</html>
